@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: postgres
+      changes:
+        - createTable:
+            tableName: exchange_rates
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: currency_pair
+                  type: varchar(7)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rate_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: close_rate
+                  type: decimal(19,4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: previous_close_rate
+                  type: decimal(19,4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP

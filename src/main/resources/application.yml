@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: MFO
+
+  datasource:
+    username: postgres
+    password: postgres
+    hikari:
+      jdbc-url: jdbc:postgresql://localhost:5432/mfodb
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  liquibase:
+    change-log: cla
+    enabled: true
+
+server:
+  port: 8080
