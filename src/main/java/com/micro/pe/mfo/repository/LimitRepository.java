@@ -1,8 +1,8 @@
 package com.micro.pe.mfo.repository;
 
-import org.hibernate.query.spi.Limit;
+import com.micro.pe.mfo.entity.Limit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface LimitRepository extends JpaRepository<com.micro.pe.mfo.entity.Limit, Long> {
+public interface LimitRepository extends JpaRepository<Limit, Long> {
     Limit findFirstByCategoryOrderByStartDateDesc(String category);
 }

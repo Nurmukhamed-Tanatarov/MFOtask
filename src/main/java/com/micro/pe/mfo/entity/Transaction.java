@@ -29,4 +29,6 @@ public class Transaction {
 
     @Column(nullable = false)
     private Boolean limitExceeded = false;
+
+
 }

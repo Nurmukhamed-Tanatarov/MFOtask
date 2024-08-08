@@ -1,14 +1,17 @@
 package com.micro.pe.mfo.dto;
 
+import jakarta.persistence.Column;
 import lombok.Data;
-import java.sql.Timestamp;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Data
 public class TransactionDTO {
-    private Integer amount;
+    private BigDecimal amount;
     private String currency;
+    private LocalDateTime date;
     private String category;
-    private Timestamp transactionDate;
-    private boolean limit_exceeded;
-    private Timestamp createdAt;
+    private String description;
+    private Boolean limitExceeded;
 }
