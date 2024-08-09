@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: postgres
+      changes:
+        - createTable:
+            tableName: exchange_rates_archive
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: currency_pair
+                  type: varchar(7)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rate
+                  type: decimal(10,6)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: date
+                  constraints:
+                    nullable: false

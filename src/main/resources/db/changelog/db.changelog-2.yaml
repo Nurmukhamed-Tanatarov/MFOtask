@@ -1,25 +1,21 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 2
       author: postgres
       changes:
         - createTable:
-            tableName: transactions
+            tableName: limits
             columns:
               - column:
                   name: id
-                  type: uuid
+                  type: int
                   constraints:
                     primaryKey: true
                     nullable: false
+                    autoIncrement: true
               - column:
                   name: amount
-                  type: decimal(19,4)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: currency
-                  type: varchar(3)
+                  type: decimal(15,2)
                   constraints:
                     nullable: false
               - column:
@@ -28,15 +24,10 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: transaction_date
-                  type: timestamp
+                  name: start_date
+                  type: date
                   constraints:
                     nullable: false
               - column:
-                  name: limit_exceeded
-                  type: boolean
-                  defaultValue: false
-              - column:
-                  name: created_at
-                  type: timestamp
-                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: end_date
+                  type: date

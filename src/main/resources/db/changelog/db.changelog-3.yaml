@@ -1,32 +1,33 @@
 databaseChangeLog:
   - changeSet:
-      id: 2
+      id: 3
       author: postgres
       changes:
         - createTable:
-            tableName: monthly_limits
+            tableName: exchange_rates
             columns:
               - column:
                   name: id
-                  type: uuid
+                  type: int
                   constraints:
                     primaryKey: true
                     nullable: false
+                    autoIncrement: true
               - column:
-                  name: category
-                  type: varchar(50)
+                  name: currency_pair
+                  type: varchar(7)
                   constraints:
                     nullable: false
               - column:
-                  name: limit_amount
-                  type: decimal(19,4)
-                  defaultValue: 1000.00
+                  name: rate
+                  type: decimal(10,6)
+                  constraints:
+                    nullable: false
               - column:
-                  name: set_date
+                  name: date
                   type: date
                   constraints:
                     nullable: false
               - column:
-                  name: created_at
-                  type: timestamp
-                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: previous_close
+                  type: decimal(10,6)

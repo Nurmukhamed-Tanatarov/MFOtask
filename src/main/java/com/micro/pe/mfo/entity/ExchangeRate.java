@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class ExchangeRate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "currency_pair", nullable = false, length = 7)
     private String currencyPair;
